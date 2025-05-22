@@ -276,6 +276,34 @@
          .read-more i { margin-left: 0.5rem; transition: transform 0.3s ease; }
          .read-more:hover i { transform: translateX(3px); }
 
+        /* Founder Section */
+         .founder-section { padding: 5rem 0; background-color: #f8f9fa; position: relative; overflow: hidden; }
+         .founder-section::before { content: ''; position: absolute; right: 0; top: 0; width: 300px; height: 300px; background-color: rgba(16, 172, 132, 0.05); border-radius: 50%; transform: translate(50%, -50%); }
+         .founder-content { display: flex; align-items: center; gap: 3rem; position: relative; flex-wrap: wrap; /* Allow wrapping */ }
+         .founder-image { flex: 0 0 300px; position: relative; max-width: 100%; /* Responsive */ }
+         .founder-image img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background-color: #ccc; /* Placeholder BG */ }
+         .founder-image::after { content: ''; position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px); border: 2px solid var(--primary); border-radius: 10px; opacity: 0.5; z-index: -1; }
+         .founder-text { flex: 1; min-width: 300px; /* Ensure text block has space */ }
+         .founder-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--dark); }
+         .founder-text .subtitle { font-size: 1.2rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: 600; }
+         .founder-text p { margin-bottom: 1.5rem; color: #555; line-height: 1.8; }
+         .founder-quote { padding: 1.5rem; background-color: #fff; border-left: 4px solid var(--primary); margin: 2rem 0; font-style: italic; color: #555; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+         .signature-block { display: flex; flex-direction: column; align-items: flex-start; /* Changed alignment */ margin-top: 2rem; }
+         .signature { font-family: 'Brush Script MT', cursive; font-size: 2rem; color: var(--dark); margin-bottom: 0.5rem; }
+         .founder-title { font-size: 0.9rem; color: #666; }
+
+        /* Testimonials Section */
+        .testimonials { padding: 5rem 0; background-color: #fff; }
+        .testimonial-slider { max-width: 800px; margin: 0 auto; padding: 2rem; position: relative; /* Add more structure if using a library */ }
+        .testimonial-card { background-color: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin: 2rem 1rem; position: relative; }
+        .testimonial-card::before { content: '"'; position: absolute; top: -30px; left: 20px; font-size: 120px; color: var(--primary); opacity: 0.1; font-family: 'Georgia', serif; line-height: 1; }
+        .testimonial-content { font-style: italic; margin-bottom: 1.5rem; color: #555; position: relative; z-index: 1; }
+        .testimonial-author { display: flex; align-items: center; }
+        .author-image { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; margin-right: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .author-image img { width: 100%; height: 100%; object-fit: cover; background-color: #ddd; /* Placeholder BG */ }
+        .author-info h4 { font-weight: 600; color: var(--dark); margin-bottom: 0.2rem; }
+        .author-info p { font-size: 0.9rem; color: #777; }
+
         /* Newsletter Section */
          .newsletter { padding: 4rem 0; background-color: #fff; }
          .newsletter-content { max-width: 700px; margin: 0 auto; text-align: center; }
@@ -601,7 +629,50 @@
           </div>
     </section>
 
-          <!-- {# Testimonials Section structure from index.html #}
+    {# Founder Section structure from index.html #}
+     <section id="founder" class="founder-section">
+         <div class="container founder-content">
+             <div class="founder-image">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQEtSxqC9ZswCw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1707643663175?e=1751500800&v=beta&t=Jlqqa2lL7kRKehTbCiMh-WeduWuAvaH_-KVR3Hil2LU" 
+                    alt="Vishal Jadaun - Founder & CEO" 
+                    style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid transparent; animation: highlight-border 2s infinite;">
+
+                <style>
+                    @keyframes highlight-border {
+                        0% {
+                            border-color: var(--primary);
+                            
+                        }
+                        50% {
+                            border-color: var(--secondary);
+                           
+                        }
+                        100% {
+                            border-color: var(--primary);
+                            
+                        }
+                    }
+                </style>
+             </div>
+             <div class="founder-text">
+                {# Content from index.html #}
+                 <div class="subtitle">Meet Our Founder</div>
+                 <h2>Vishal Jadaun</h2>
+                    <p>Vishal Jadaun, a pre-final year student with a strong interest in computer science and finance, founded StockInsight with a clear mission — to help investors make smarter decisions and grow their money. He noticed a big gap in how most people analyze stocks, so he decided to build a platform that makes it easier and more accurate.</p>
+
+                    <p>Using machine learning algorithms, Vishal aims to turn StockInsight into one of the best stock prediction Platform out there. His goal is simple: give investors the right tools to understand the market better and grow their investments with confidence.</p>
+                 <div class="founder-quote">
+                     "What sets StockInsight apart is our commitment to continuous innovation. Our models don't just analyze historical data—they understand market psychology, adapt to changing economic conditions, and recognize emerging patterns before they become obvious to the market. This gives our users a genuine edge in their investment decisions."
+                 </div>
+                 <div class="signature-block">
+                     <div class="signature">Vishal Jadaun</div>
+                     <div class="founder-title">Founder & CEO, StockInsight</div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- {# Testimonials Section structure from index.html #}
      <section class="testimonials">
          <div class="container">
              <div class="section-title">
